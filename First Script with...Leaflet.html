@@ -1,0 +1,84 @@
+<!-- Welcome back to a new video from Geoprogramming. TOday we have our first script with...leaflet. This is one of the most populare packages in js and we are gonna learn how to create a script from scratch -->
+
+<!-- The fist thing we need is to create a basic html file. I will take it from google, and I will keep the link in the description -->
+
+<!-- We can refresh the webpage to see if its working. And it is!! Now, lets add the code -->
+
+<!-- Second step is to add the libraries that leaflet needs to work. All the info I will add cames from leaflet webside examples (description too, I know) -->
+
+<!-- This will allow us to add some js code here from leaflet package. We can remove the old text and lets add our map -->
+
+<!-- As you can see, we had added the map in the div but nothing is comming, that is because we need the js code now to created it, we had just stablished where we want to have it -->
+
+
+<!DOCTYPE html>
+<html>
+
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+<body>
+
+<div id="mapid" style="height: 500px;" ></div>
+
+
+
+</body>
+
+<script>
+<!-- Here we have our map. We are using the same name than in the div in order to connect them. Now the map is comming, but it is empty, lets fill it!!-->
+var mymap = L.map('mapid').setView([52.52, 13.4], 13);
+
+<!-- Here we are adding a tile layer from OSM to our map. Lets check the map now -->
+<!-- And now we have map, a dinamic one. Btw, the set view for the map has lat long for the centrer of the map an 13 as the level of zoom -->
+
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(mymap);
+
+
+<!-- Lets add now a marker and see what we can do with it. Lets add a popup. Remember to refresh the page every time -->
+
+
+
+var marker = L.marker([52.52, 13.4]).addTo(mymap);
+
+<!-- By adding .openPopup() it will keep the popup open when we refresh -->
+marker.bindPopup('Geoprogamming with leaflet.').openPopup();
+
+<!-- Finally, lets add a dinamic creation of markers using the js capabilities -->
+
+<!-- With this code, we create an alert that shows the lat long of the point of the map in a dinamic way -->
+
+function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+mymap.on('click', onMapClick);
+
+<!-- We are gonna use that lat long to create markers while clicking by overwriting them -->
+
+var popup = L.popup();
+var marker2 = L.marker();
+
+
+function onMapClick(e) {
+	marker
+        .setLatLng(e.latlng)
+		.bindPopup("You clicked the map at " + e.latlng).openPopup()
+        .addTo(mymap);
+}
+
+mymap.on('click', onMapClick);
+
+<!-- We create a popup and marker that are gonna be overwited in every click by the setLatLng and we will add a popup with this info. Lets see how it works -->
+
+
+</script>
+</html>
