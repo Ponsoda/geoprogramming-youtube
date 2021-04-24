@@ -1,9 +1,14 @@
 ##### Table of Contents  
 [GeoProgramming](#GeoProgramming)
+
 [About the project](#about-the-project)
+
 [First script with...Folium](#first-script-withfolium) 
+
 [First script with...sf](#first-script-withsf) 
+
 [First script with...Leaflet](#first-script-withleaflet)
+
 [First script with...Geopandas](#first-script-withgeopandas) 
 
 # GeoProgramming
