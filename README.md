@@ -1,10 +1,10 @@
 ##### Table of Contents  
 [GeoProgramming](#GeoProgramming)
-[About the project](##About the project)
-[First script with...Folium](#First script with...Folium) 
-[First script with...sf](#First script with...SF) 
-[First script with...Leaflet](#First script with...Leaflet)
-[First script with...Geopandas](#First script with...GeoPandas) 
+[About the project](#about-the-project)
+[First script with...Folium](#first-script-withfolium) 
+[First script with...sf](#first-script-withsf) 
+[First script with...Leaflet](#first-script-withleaflet)
+[First script with...Geopandas](#first-script-withgeopandas) 
 
 # GeoProgramming
 Repository for the documents of the youtube channel [GeoProgramming](https://www.youtube.com/channel/UC_7I3M6gzL2Mkf6ZrccVDyw). 
