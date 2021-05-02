@@ -1,0 +1,112 @@
+<!-- Welcome to a new geoprogramming vide. In this case we will explote a new geopackage in js -->
+<!-- This time, we will learn how to programm in, first script with... open layers-->
+<!-- We are gonna create a simple script with open layers with some play with html, lets start -->
+<!--The first step will be to get a basic html  -->
+
+<!-- Now we want to add the dependecies of the package -->
+<!-- And now, lets create a basic map, first we need to create a space in the body to bring the map -->
+<!-- And now let´s add a basic map, I will show you it in 3 steps -->
+<!-- First we create the script space to add js code, now, let's create the map -->
+
+
+<!-- The map is not comming yet, we had created a map from ol (open layers), and get the id(target) map, now we need to add the tails -->
+<!-- Nothing yet right, don't worry, let's follow with this, now we need to add the stile to the map, ussing the class ('map') -->
+<!-- Now we have an (empty), map. Let´s add some content here -->
+
+<!-- Many things to explain here as it was too fast. The icon feature is creating a point, that we will use later (create a feature that contains the geometry pint)-->
+<!-- the next part is the same that the two previous steps, so create the map and add the tails from Open Street maps (osm) -->
+<!-- and here you can add just the view and the map will be plot, here we are, I just removed the part related to the marker -->
+<!-- so the last part I added is the marker, it´s less "clear" than in other packages but it  can also be done -->
+
+<!-- here we stablish the size of the marker and how it looks like, how it will look without the source? is not looking at all, can we change the size? of course-->
+<!-- and finally we stablish the lat and long and the zoom to center the map-->
+<!-- And finally, let´s add some html code to add some funny stuff -->
+<!-- I will add a button after the code to zoom to another place, and we need to connect it to the code, cause now it does nothing -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+	 <style>
+      .map {
+        height: 600px;
+        width: 80%;
+      }
+    </style>
+	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+	</head>
+<body>
+
+<!-- It´s a simple form with some text with explanation, and the location to place the text with the id to get it on the code part-->
+<div id="map" class="map"></div>
+ <button id="zoomto">Zoom to another place</button>
+	 <form action="/action_page.php">
+	  <label for="fname">Lat:</label>
+	  <input type="text" id="lat" name="fname"><br><br>
+	  <label for="lname">Long:</label>
+	  <input type="text" id="lon" name="lname"><br><br>
+	  <label for="lname">Zoom level:</label>
+	  <input type="text" id="zoom" name="lname"><br><br>
+	</form>
+</body>
+
+    <script type="text/javascript">
+	
+	const iconFeature = new ol.Feature({
+		  geometry: new ol.geom.Point(ol.proj.fromLonLat([31.60611, 40.73583]))
+	});
+ 
+	 var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          }),
+			new ol.layer.Vector({
+			  source: new ol.source.Vector({
+				features: [iconFeature]
+      }),
+      style: new ol.style.Style({
+        image: new ol.style.Icon({
+          anchor: [0.5, 46],
+		  scale: 0.05,
+          anchorXUnits: 'fraction',
+          anchorYUnits: 'pixels',
+          src: 'https://www.cp-desk.com/wp-content/uploads/2019/02/map-marker-free-download-png.png'
+        })
+      })
+    })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([31.60611, 40.73583]),
+          zoom: 10
+        })
+      });
+	  
+<!-- this is a listener, which get the element with id zoomto, ones you do something, in this case you click on it, and it will launch a function, so let´s populate the function-->
+<!-- something went wrong -->
+<!-- workingggg, but we want more fun right, let´s a dd a form to add the lat, long and zoom by ourselves-->
+	var zoomto = document.getElementById('zoomto');
+	zoomto.addEventListener(
+	  'click',
+	  
+	  <!-- we get the elements.value and to float to avoid any problem with the data, let's try it -->
+	  function () {
+
+
+			var lat = parseFloat(document.getElementById('lat').value)
+			var lon = parseFloat(document.getElementById('lon').value)
+			var zoom_level = parseFloat(document.getElementById('zoom').value)
+
+		    map.getView().setCenter(ol.proj.transform([lat, lon], 'EPSG:4326', 'EPSG:3857'));
+			map.getView().setZoom(zoom_level);
+			
+	  
+	  },
+	  false
+	);
+	
+	<!-- And it works fine!!!!!, that is all for this video, thank you for watching, and keep coding with geoprogramming!!!!!!!!!!!!!!!!!!-->
+	
+	</script>
+</html>
