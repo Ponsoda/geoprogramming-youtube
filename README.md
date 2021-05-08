@@ -9,7 +9,9 @@
 
 * [First script with...Leaflet](#first-script-withleaflet)
 
-* [First script with...Geopandas](#first-script-withgeopandas) 
+* [First script with...Geopandas](#first-script-withgeopandas)
+* 
+* [First script with...Leaflet](#first-script-withleaflet_in_r)
 
 # GeoProgramming
 Repository for the documents of the youtube channel [GeoProgramming](https://www.youtube.com/channel/UC_7I3M6gzL2Mkf6ZrccVDyw). 
@@ -32,3 +34,8 @@ In [this video](https://www.youtube.com/watch?v=1f_RhMbxRP4) tutorial we will se
 ## First script with...GeoPandas
 Getting started in Geopandas (in Python). In [this video](https://www.youtube.com/watch?v=GPVPwss8FBU) we will see an easy script in python using Geopandas library. 
 * Notebook: https://github.com/Ponsoda/GeoProgramming/blob/main/First%20Script%20With...Geopandas.ipynb
+
+## First script with...Leaflet in R
+Getting started in Leaflet (in R). In [this video](https://www.youtube.com/watch?v=F08PvG2c3P0) we will see an easy script in R using Leaflet library. 
+* Notebook: https://github.com/Ponsoda/GeoProgramming/blob/main/First%20Script%20With...Leaflet%20in%20R.R
+
