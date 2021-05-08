@@ -10,8 +10,8 @@
 * [First script with...Leaflet](#first-script-withleaflet)
 
 * [First script with...Geopandas](#first-script-withgeopandas)
-* 
-* [First script with...Leaflet](#first-script-withleaflet_in_r)
+
+* [First script with...Leaflet](#first-script-withleaflet-in-r)
 
 # GeoProgramming
 Repository for the documents of the youtube channel [GeoProgramming](https://www.youtube.com/channel/UC_7I3M6gzL2Mkf6ZrccVDyw). 
