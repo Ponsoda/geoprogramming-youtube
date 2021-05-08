@@ -12,7 +12,7 @@
 * [First script with...Geopandas](#first-script-withgeopandas)
 
 * [First script with...Leaflet in R](#first-script-withleaflet-in-r)
-*
+
 * [First script with...Open Layers](#first-script-withopen-layers)
 
 # GeoProgramming
