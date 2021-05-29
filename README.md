@@ -15,6 +15,8 @@
 
 * [First script with...Open Layers](#first-script-withopen-layers)
 
+* [First script with...Kepler](#first-script-withkepler)
+
 # GeoProgramming
 Repository for the documents of the youtube channel [GeoProgramming](https://www.youtube.com/channel/UC_7I3M6gzL2Mkf6ZrccVDyw). 
 
@@ -44,3 +46,9 @@ Getting started in Leaflet (in R). In [this video](https://www.youtube.com/watch
 ## First script with...Open Layers
 In [this video](https://www.youtube.com/watch?v=Jm4xFuMzNP4) tutorial we will see an easy script in JavaScript using Open Layers library. With this video you can create an interactive map from scratch without previous programming knowledge.
 * Notebook: https://github.com/Ponsoda/GeoProgramming/blob/main/First%20Script%20With...%20Open%20Layers.html
+
+## First script with...Kepler
+There is a first [video](https://www.youtube.com/watch?v=LHZtd7U8b9Y) to install Kepler requeriments to Anaconda. In [this second video](https://www.youtube.com/watch?v=Egb38Wvl-aU) tutorial we will see an easy sway to use the Kepler capabilities in a Python notebook. With this video you can create an interactive map from scratch without previous programming knowledge.
+* Notebook: https://github.com/Ponsoda/GeoProgramming/blob/main/First%20Sricpt%20With...Kepler.ipynb
+
+
