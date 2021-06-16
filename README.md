@@ -51,4 +51,8 @@ In [this video](https://www.youtube.com/watch?v=Jm4xFuMzNP4) tutorial we will se
 There is a first [video](https://www.youtube.com/watch?v=LHZtd7U8b9Y) to install Kepler requeriments to Anaconda. In [this second video](https://www.youtube.com/watch?v=Egb38Wvl-aU) tutorial we will see an easy sway to use the Kepler capabilities in a Python notebook. With this video you can create an interactive map from scratch without previous programming knowledge.
 * Notebook: https://github.com/Ponsoda/GeoProgramming/blob/main/First%20Sricpt%20With...Kepler.ipynb
 
+## First script with...Raster
+TIn [video](https://www.youtube.com/watch?v=P_DtgBCqN6Y) how to use the very basic functions with Raster package and R Studio.
+* Notebook: https://github.com/Ponsoda/GeoProgramming/blob/main/First%20Script%20With...Raster.R
+
 
