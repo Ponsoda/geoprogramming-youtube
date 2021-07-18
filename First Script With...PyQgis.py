@@ -1,26 +1,7 @@
-Python Console
-Use iface to access QGIS API interface or Type help(iface) for more info
-Security warning: typing commands from an untrusted source can lead to data loss and/or leak
 # Welcome to a new geoprogramming video 
 # today we will have our first script with pyQgis
 # we will learn how to import a shapefile and how to make a selection and a field calculation
 # the first goal will be to import the layer
-to do so, let´s get the path
-Traceback (most recent call last):
-  File "C:\OSGEO4~1\apps\Python37\lib\code.py", line 63, in runsource
-    code = self.compile(source, filename, symbol)
-  File "C:\OSGEO4~1\apps\Python37\lib\codeop.py", line 168, in __call__
-    return _maybe_compile(self.compiler, source, filename, symbol)
-  File "C:\OSGEO4~1\apps\Python37\lib\codeop.py", line 99, in _maybe_compile
-    raise err1
-  File "C:\OSGEO4~1\apps\Python37\lib\codeop.py", line 87, in _maybe_compile
-    code1 = compiler(source + "\n", filename, symbol)
-  File "C:\OSGEO4~1\apps\Python37\lib\codeop.py", line 133, in __call__
-    codeob = compile(source, filename, symbol, self.flags, 1)
-  File "<input>", line 1
-    to do so, let´s get the path
-        ^
-SyntaxError: invalid syntax
 #to do so, let´s get the path
 # we will use a european rivers layer (will keep it in the description)
 # the source I mean
