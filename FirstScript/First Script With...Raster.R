@@ -26,7 +26,7 @@ summary(dem)
 # show you some funtions of the package
 # okay, now we can change the projection of the raster
 
-# but first let´s plot it and we will see the difference
+# but first letÂ´s plot it and we will see the difference
 
 plot(dem)
 
@@ -35,7 +35,7 @@ projection <-  "+proj=utm +zone=19 +datum=NAD83 +units=m +no_defs +ellps=GRS80
 
 # we define a projection, and we add it using 
 # we have a new rayer layer called dem_utm, with a new projection
-# let´s plot it
+# letÂ´s plot it
 
 dem_utm <- projectRaster(dem, crs= projection)
 
@@ -64,7 +64,7 @@ plot(dem, col=terrain.colors(30), main= "Bogota Raster")
 
 spplot(dem)
 
-# it is fancy, isn´t it?
+# it is fancy, isnÂ´t it?
 
 # and you can use the terrain function to  calculate parameters like
 # slope and aspect, 
