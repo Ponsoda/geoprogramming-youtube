@@ -1,0 +1,138 @@
+<!-- 
+ Hello and welcome to a new geoprogramming video. this time we will learn about how to use the amazing package of turf in js. Turf allows you to 
+ perform geospatial calculations on your web app.
+
+ I strongly recommend you to watch first the leaflet in js video, as we will use leaflet to visualize the turf calculations.
+
+ Wi will start by creating a file .html like this one and creatting the basic html structure . Second step will be to add the leaflet and turf
+ libraries (you can copy them from the file -remember it is always in the description box).
+
+
+ To set up a map with leaflet, we also need to create a div with an id, that we will use to add the code later. first we need to add the style to
+ be able to visualize it. And then, to create the div
+
+ Now we can start with the script
+-->
+
+<!DOCTYPE html>
+<html>
+    <header>
+        <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+        crossorigin=""/>
+         <!-- Make sure you put this AFTER Leaflet's CSS -->
+        <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+        crossorigin=""></script>
+        <style>
+            #map { height: 500px; }
+
+        </style>   
+    </header>
+    <body>
+        <div id="map"></div>
+    </body>
+    <script>
+
+// we set up the map and the setview with leaflet
+
+var map = L.map('map').setView([36.9660, -5.6616], 15);
+
+// and then we add the map
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+// this was leaflet, now let's start with turf
+
+// the first step will be to create a collection of points, we do so by using turf.points
+
+var pointsCollection = turf.points([
+                    [-5.6664, 36.9669],
+					[-5.6616, 36.9660],
+					[-5.6611, 36.9637],
+					[-5.6659, 36.9641]
+        ]);
+
+// if you realize, the lat long are switched if you take leaflet as reference, will not affect in this case as we will use turf as a geojson object
+// but it is good for you to know
+
+// to add it to the map as geojson object, you have to write the following
+
+L.geoJson(pointsCollection).addTo(map);
+
+// now, let's calculate the center of those 4 points
+
+var center = turf.center(pointsCollection);
+
+L.geoJSON(center).addTo(map);
+
+// and now we have a new point in the center
+
+// another thing we can do is to calculate the distance between two points
+// imagine that we wanna calculate the distance between 1st and second point
+// we are going to access to the leaflet object to get those points
+// would be working as well with turf.points(and here you add the coords within a [])
+// if you wanna see how to access an object, you can check it by console.log(pointsCollection)
+
+var distance = turf.distance(pointsCollection.features[0], pointsCollection.features[1]);
+// alert("distance between points in km: " + distance)
+
+// we can as well calculate a middle point between two points with the following
+
+var midpoint = turf.midpoint(pointsCollection.features[0], pointsCollection.features[1]);
+
+L.geoJSON(midpoint).addTo(map);
+
+
+// but it is not only points, turf can also work with polygons
+// so, how to create a polygon now with the points from the pointsCollection?
+// the easiest way is this one, copy the coords and add the first coord at the end to close the polygon
+
+var polygon = turf.polygon([[
+                    [-5.6664, 36.9669],
+					[-5.6616, 36.9660],
+					[-5.6611, 36.9637],
+					[-5.6659, 36.9641],
+                    [-5.6664, 36.9669]
+]])
+
+L.geoJSON(polygon).addTo(map);
+
+// pretty awesome right??
+
+// wait
+// first, let's calculate the area of the polygon
+
+var area = turf.area(polygon);
+// alert("the area in m2 is: " + area)
+
+// co co cool, 
+
+// to finalize this, let's create a new poligon and calculate the interection between both
+// will change the color of the new polygons to differenciate them
+
+var polygon_two = turf.polygon([[
+                    [-3.6664, 39.9669],
+					[-5.6616, 36.9660],
+					[-6.6611, 35.9637],
+					[-5.6659, 36.9641],
+                    [-3.6664, 39.9669]
+        ]]);
+
+L.geoJSON(polygon_two, {style: {'color': 'red'}}).addTo(map);
+
+var intersection = turf.intersect(polygon, polygon_two);
+
+L.geoJSON(intersection, {style: {'color': 'green'}}).addTo(map);
+
+
+// there it is. that was all for today, there are many many funcionallities more in turf, if you enjoy this video I will make annother
+// one with more of them. byeee
+
+
+    </script>
+</html>
